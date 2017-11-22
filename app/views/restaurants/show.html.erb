@@ -1,0 +1,18 @@
+<div class="container text-left">
+  <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+         <h1 class="text-left"><%= @restaurant.name.capitalize %></h1>
+         <ul class="list-unstyled">
+          <li><%= @restaurant.address %></li>
+          <li><%= @restaurant.category %></li>
+          <% @restaurant.reviews.each do |review| %>
+            <li><%= review.rating %></li>
+            <li><%= review.content %></li>
+          <% end %>
+          <li><%= link_to 'Add review', new_restaurant_review_path(@restaurant) %></li>
+          <li><%= link_to 'Back to list', restaurants_path %></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
